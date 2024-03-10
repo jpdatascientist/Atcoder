@@ -10,3 +10,5 @@ k -= xb
 xc = k  # 残りの枚数
 
 print(xa * 1 + xb * 0 + xc * -1)
+
+print(a)

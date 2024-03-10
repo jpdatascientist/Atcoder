@@ -1,0 +1,29 @@
+# https://atcoder.jp/contests/abc341/tasks/abc341_c
+h,w,n = map(int,input().split())
+
+t = list(input())
+g = [list(input()) for _ in range(h)]
+
+ans = 0
+for i in range(h):
+    for j in range(w):
+        y,x = i,j
+        ok = g[y][x] == "."
+        
+        for k in t:
+            if not ok:
+                break
+            if k== "L":
+                x -= 1
+            elif k == "R":
+                x += 1
+            elif k == "U":
+                y -= 1
+            elif k == "D":
+                y += 1
+                
+            ok &= g[y][x] == "."
+            
+        ans += ok
+print(ans)
+                
